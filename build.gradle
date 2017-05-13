@@ -1,0 +1,42 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.2'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        classpath 'me.tatarka:gradle-retrolambda:3.4.0'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+    // Sdk and tools
+    minSdkVersion = 19
+    targetSdkVersion = 24
+    compileSdkVersion = 24
+    buildToolsVersion = '25.0.0'
+
+
+    // App dependencies
+    supportLibraryVersion = '25.0.0'
+    junitVersion = '4.12'
+    runnerVersion = '0.5'
+    multiDexVersion = '1.0.1'
+
+    constraintLayout = '1.0.0-beta5'
+    expandableRecyclerview= '3.0.0-RC1'
+
+    rxAndroidVersion = '1.2.1'
+    rxPermissionsVersion = '0.7.0@aar'
+    rxBindingVersion = '0.4.0'
+
+    eventBusVersion = '3.0.0'
+    androidAnnotationsVersion = '4.0.0'
+}

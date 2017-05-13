@@ -1,0 +1,55 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        applicationId "com.x13945.messaging"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+/*        ndk {
+            moduleName "libgiftranscode"
+        }*/
+
+        testApplicationId "com.android.messaging.test"
+        testInstrumentationRunner "android.test.InstrumentationTestRunner"
+        jackOptions {
+            enabled true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support:support-annotations:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support:support-v13:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support:palette-v7:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
+    compile 'com.google.guava:guava:20.0'
+    compile project(':android-common')
+    compile project(':chips')
+    compile project(':colorpicker')
+    compile project(':photoviewer')
+    compile project(':photoviewer-activity')
+    compile project(':vcard')
+    compile project(':libphonenumber')
+    compile project(':framesequence')
+    compile 'com.google.code.findbugs:jsr305:3.0.0'
+}
+

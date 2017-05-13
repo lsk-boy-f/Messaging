@@ -1,0 +1,25 @@
+import org.gradle.api.artifacts.Dependency;
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    sourceSets.main {
+        manifest.srcFile 'AndroidManifest.xml'
+        java.srcDirs = ['src', 'appcompat/src']
+        res.srcDirs = ['res', 'appcompat/res']
+    }
+}
+
+dependencies {
+    compile project(':photoviewer')
+}
+
+Dependency findDependency(String projectName, String moduleName) {
+    if (findProject(projectName) != null) {
+        return dependencies.project(path: projectName)
+    }
+
+    return dependencies.create(moduleName)
+}

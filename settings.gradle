@@ -1,0 +1,11 @@
+include ':app'
+include ':android-common'
+include ':chips'
+include ':colorpicker'
+include ':photoviewer'
+include ':photoviewer-activity'
+project(':photoviewer-activity').projectDir = new File(settingsDir, "photoviewer/activity")
+
+include ':vcard'
+include ':libphonenumber'
+include ':framesequence'

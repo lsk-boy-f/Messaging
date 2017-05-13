@@ -1,0 +1,15 @@
+apply plugin: 'com.android.library'
+android{
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['java']
+        }
+    }
+}
+
+/*dependencies {
+    compile getAndroidPrebuilt('9')
+}*/
